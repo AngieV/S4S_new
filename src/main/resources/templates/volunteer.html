@@ -2,19 +2,19 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="https://www.thymeleaf.org/ ">
-<head>
-    <meta charset="UTF-8"/>
-    <title th:text="${title}">Volunteer</title>
-</head>
-<body>
-<hi th:text="${title}">Volunteer</hi>
-<form method='post' action='/volunteer'>
-    <input type='text' name='name'/>
-    <input type='submit' value='Log In'/>
+<head th:replace="fragments :: head"></head>
+<body class="container">
+    <div>
+        <h1 th:text="${title}">Volunteer</h1>
+        <form method='post' action='/volunteer'>
+            <input type='text' value='name'/>
+            <input type='submit' value='Log In'/>
 
-    <input type='text' value='e-mail'/>
-    <input type='submit' value='Volunteer'/>
-    <input type='reset' value='Reset'/>
-</form>
+            <input type='text' value='e-mail'/>
+            <input type='submit' value='Volunteer'/>
+            <input type='reset' value='Reset'/>
+        </form>
+    </div>
+    <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

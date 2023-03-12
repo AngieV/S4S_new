@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org/ ">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+    <div>
+        <h1 th:text="${title}">Tix</h1>
+        <ul>
+            <th:block th:each="day : ${days}">
+                <li th:text="${name}"></li>
+            </th:block>
+        </ul>
+    </div>
+    <div id="footer" th:replace="fragments :: footer"></div>
+</body>
+</html>

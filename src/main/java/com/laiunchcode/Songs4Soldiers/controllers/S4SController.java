@@ -1,7 +1,11 @@
 package com.laiunchcode.Songs4Soldiers.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // Created by Angela Volluz 2023
 //use montserrat Lato or Robato
@@ -29,13 +33,21 @@ public class S4SController {
     }
 
     //DYNAMIC RESPONSE -takes a query parameter
+    /*
+    //@GetMapping("hello")
     //general response replaces GetMapping- accepts both get or post
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
-    //@GetMapping("hello")
     //params in () indicate the handler is specific to the indicated path 8080//hello?name=S4S
     @ResponseBody
     public String helloQueryParam(@RequestParam String name) {
         return "Hello, " + name + "!";
+    }
+    */
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
+    public String helloQueryParam(@RequestParam String name, Model model) {
+        String greeting = "Hello, " + name + "!";
+        model.addAttribute("greeting", greeting);
+        return "hello";
     }
 
     //PATH PARAMS in DYNAMIC REQUESTS (COOL SHIT!)
@@ -53,14 +65,50 @@ public class S4SController {
         return "form";
     }
 
-    @GetMapping("volunteer")
-    public String volunteer() {
-        return "volunteer";
-    }
-
     @GetMapping("index")
     public String index() {
         return "index";
+    }
+
+    @GetMapping("merchandise")
+    public String merchandise(Model model) {
+        String title="Official Merchandise";
+        model.addAttribute("title", title);
+        return "merch";
+    }
+
+    @GetMapping("tickets")
+    public String tickets(Model model) {
+        String title="Tickets";
+        model.addAttribute("title", title);
+        return "tickets";
+    }
+
+    @GetMapping("events")
+    public String events(Model model) {
+        String title="Events";
+        model.addAttribute("title", title);
+        List<String> events=new ArrayList<>();
+        events.add("Yoga4Soldiers 2023");
+        events.add("Maupin Memorial Hero Workout");
+        events.add("Songs4Soldiers Yard Sale");
+        events.add("2023 S4S Golf Tournament");
+        model.addAttribute("events", events);
+        return "events";
+    }
+
+    @GetMapping("volunteer")
+    public String volunteer(Model model) {
+        String title="Volunteer";
+        model.addAttribute("title", title);
+        return "volunteer";
+    }
+
+    @GetMapping("contact")
+    public String contact(Model model) {
+        String title="Contact Us";
+        model.addAttribute("title", title);
+        return "contact";
     }
 
 }
