@@ -70,7 +70,12 @@ public class S4SController {
         return "index";
     }
 
-    @GetMapping("merchandise")
+    @GetMapping("about")
+    public String about(){
+        return "about";
+    }
+
+    @GetMapping("shop")
     public String merchandise(Model model) {
         String title="Official Merchandise";
         model.addAttribute("title", title);
@@ -82,19 +87,6 @@ public class S4SController {
         String title="Tickets";
         model.addAttribute("title", title);
         return "tickets";
-    }
-
-    @GetMapping("events")
-    public String events(Model model) {
-        String title="Events";
-        model.addAttribute("title", title);
-        List<String> events=new ArrayList<>();
-        events.add("Yoga4Soldiers 2023");
-        events.add("Maupin Memorial Hero Workout");
-        events.add("Songs4Soldiers Yard Sale");
-        events.add("2023 S4S Golf Tournament");
-        model.addAttribute("events", events);
-        return "events";
     }
 
     @GetMapping("volunteer")
@@ -109,6 +101,45 @@ public class S4SController {
         String title="Contact Us";
         model.addAttribute("title", title);
         return "contact";
+    }
+
+    @GetMapping("events")
+    public String events(Model model) {
+        String title="Events";
+        model.addAttribute("title", title);
+        List<String> events=new ArrayList<>();
+        events.add("Yoga4Soldiers");
+        events.add("Maupin Memorial Hero Workout");
+        events.add("Songs4Soldiers Yard Sale");
+        events.add("2023 S4S Golf Tournament");
+        model.addAttribute("events", events);
+        model.addAttribute("signup", "signup");
+        return "events";
+    }
+
+    @GetMapping("events/yoga4soldiers")
+        public String yoga4soldiers(){
+        return "yoga4soldiers";
+    }
+
+    @GetMapping("events/golf")
+    public String golf(){
+        return "golf";
+    }
+
+    @GetMapping("events/yardsale")
+    public String yardsale(){
+        return "yardsale";
+    }
+
+    @GetMapping("events/workout")
+    public String workout(){
+        return "workout";
+    }
+
+    @GetMapping("signup")
+    public String signup(){
+        return "signup";
     }
 
 }

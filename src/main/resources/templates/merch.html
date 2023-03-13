@@ -4,11 +4,16 @@
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
 <body class="container">
+    <div id="header" th:replace="fragments :: header"></div>
+
     <div>
         <h1 th:text="${title}">Merch</h1>
         <ul>
-            <th:block th:each="item : ${items}">
-                <li th:text="${item}"></li>
+            <th:block th:each="category : ${categories}">
+                <li th:text="${category}"></li>
+                    <th:block th:each="item : ${items}">
+                        <li th:text="${item}"></li>
+                    </th:block>
             </th:block>
         </ul>
     </div>

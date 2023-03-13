@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org/ ">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+    <h1 th:text="${title}">Yoga4Soldiers 2023</h1>
+    <form method='post' action='/yoga4soldiers'>
+        <input type='text' value='name'/>
+        <input type='text' value='email'/>
+        <input type='submit' value='Register'/>
+    </form>
+    <div id="footer" th:replace="fragments :: footer"></div>
+</body>
+

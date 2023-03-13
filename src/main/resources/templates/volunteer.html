@@ -5,6 +5,7 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
     <div>
+        <div id="header" th:replace="fragments :: header"></div>
         <h1 th:text="${title}">Volunteer</h1>
         <form method='post' action='/volunteer'>
             <input type='text' value='name'/>
