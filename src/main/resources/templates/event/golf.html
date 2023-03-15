@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
-<head> th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head"></head>
 <body class="container">
     <div id="header" th:replace="fragments :: header"></div>
 
     <div>
         <h1>2023 S4S Golf Tournament</h1>
         <form method='post' action='/golf'>
-            <input type='text' value='name'/>
-            <input type='text' value='email'/>
+            <input type='text' name='name'/>
+            <input type='text' name='email'/>
             <input type='submit' value='Register'/>
         </form>
 

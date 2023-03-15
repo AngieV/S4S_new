@@ -1,4 +1,4 @@
-package com.laiunchcode.Songs4Soldiers;
+package com.launchcode.Songs4Soldiers;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

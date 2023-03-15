@@ -3,27 +3,28 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <div id="header" th:replace="fragments :: header"></div>
-
-    <div>
-        <h3>After a year's hiatus it's back and bigger than ever!</h3>
-        <h1>8th Annual Songs 4 Soldiers Benefit Concert</h1>
-        <h2>featuring Josh Turner & Night Ranger</h2>
-        <h3>September 17 & 18, 2021</h3>
-    </div>
-    <div>
-        <img src="../images/JoshTurnerPromo2021.jpeg" alt="Josh Turner Promo photo" style="max-width:80%;"/>
-        <img src="../images/NightRangerPromo21_1.jpeg" alt="Night Ranger Promo photo" style="max-width:80%;"/>
-    </div>
-    <div class="banner">
-        <h4>Presented By:</h4>
+<body>
+    <div class="container">
+        <div id="header" th:replace="fragments :: header"></div>
+        <div>
+            <h3>After a year's hiatus it's back and bigger than ever!</h3>
+            <h1>8th Annual Songs 4 Soldiers Benefit Concert</h1>
+            <h2>featuring Josh Turner & Night Ranger</h2>
+            <h3>September 17 & 18, 2021</h3>
+            <button onclick="window.location.href = '/tickets';">Buy tickets</button>
+        </div>
+        <div>
+            <img src="../images/JoshTurnerPromo2021.jpeg" alt="Josh Turner Promo photo" style="max-width:80%;"/>
+            <img src="../images/NightRangerPromo21_1.jpeg" alt="Night Ranger Promo photo" style="max-width:80%;"/>
+        </div>
+        <div class="banner">
+            <h4>Presented By:</h4>
+        </div>
         <div>
             <img src="../images/weberChevrolet.png" alt="Weber Chevrolet logo" style="height:100px;"/>
             <img src="../images/budweiser.png" alt="Budweiser logo" style="height:100px;"/>
-
         </div>
+        <div id="footer" th:replace="fragments :: footer"></div>
     </div>
-    <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

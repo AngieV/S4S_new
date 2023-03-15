@@ -1,4 +1,4 @@
-package com.laiunchcode.Songs4Soldiers;
+package com.launchcode.Songs4Soldiers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

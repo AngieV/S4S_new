@@ -3,16 +3,20 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <div id="header" th:replace="fragments :: header"></div>
-    <h1 th:text="${title}">Events</h1>
-    <div>
-         <th:block th:each="event : ${events}">
-            <ul>
-                <li th:text="${event}"></li><button type='submit' onclick="signup">Sign Up</button>
-            </ul>
-         </th:block>
+<body>
+    <div class="container">
+        <div id="header" th:replace="fragments :: header"></div>
+        <h1 th:text="${title}">Events</h1>
+        <div>
+             <th:block th:each="event : ${events}">
+                <ul>
+                    <li th:text="${event}"></li>
+                    <button type='submit' onclick="window.location.href ='/event/golf'">Get Info</button>
+                    <button type='submit' onclick="window.location.href ='/signup'">Sign Up</button>
+                </ul>
+             </th:block>
+        </div>
+        <div id="footer" th:replace="fragments :: footer"></div>
     </div>
-    <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

@@ -3,16 +3,25 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <div>
+<body>
+    <div class="container">
         <div id="header" th:replace="fragments :: header"></div>
 
-        <h1 th:text="title">Sign Up</h1>
+        <h1>Sign Up</h1>
         <form method='post' action='/signup'>
-            <label>Name:<input type='text' name='name'/></label>
-            <input type='submit' value='Sign Up'/>
+            <input type="checkbox" id="yoga4soldiers" name="eventName" value="Yoga4Soldiers">
+            <label for="yoga4soldiers">Yoga4Soldiers</label><br>
+            <input type="checkbox" id="workout" name="eventName" value="Maupin Memorial Hero Workout">
+            <label for="workout">Maupin Memorial Hero Workout</label><br>
+            <input type="checkbox" id="yardsale" name="eventName" value="S4S Yard Sale">
+            <label for="yardsale">S4S Yard Sale</label><br>
+            <input type="checkbox" id="golf" name="eventName" value="golf">
+            <label for="golf">S4S Annual Golf Tournament</label><br>
+            <label>Name:<input type='text' id="name" name='name'/>
+            <button type='submit' value='Sign Up'></button></label>
         </form>
 
-    <div id="footer" th:replace="fragments :: footer"></div>
+        <div id="footer" th:replace="fragments :: footer"></div>
+    </div>
 </body>
 </html>

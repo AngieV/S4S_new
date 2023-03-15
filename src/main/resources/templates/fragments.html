@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--     MAIN CSS     -->
     <link rel="stylesheet" th:href="@{/css/S4S.css}"/>
-    <link rel="stylesheet" media="screen and (min-width:550px) and (max-width:700px)" th:href="@{/css/S4S_Medium.css}"/>
-    <link rel="stylesheet" media="screen and (min-width:701px)" th:href="@{/css/S4S_Large.css}"/>
+    <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1024px)" th:href="@{/css/S4S_Medium.css}"/>
+    <link rel="stylesheet" media="screen and (min-width:1025px) and (max-width:1366px)" th:href="@{/css/S4S_Large.css}"/>
+    <link rel="stylesheet" media="screen and (max-width:767px)" th:href="@{/css/S4S_Small.css}"/>
+
     <!--  BOOTSTRAP CSS   -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>-->
     <!--    <script type="text/javascript" th:src="@{/js/script.js}"></script>-->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,9 +26,9 @@
 <body>
     <div id="header" th:fragment="header">
         <nav class="nav">
-            <a href="index"><img src="../images/S4S_color.png" alt="Songs for Soldiers logo with link to Home page" width="250" height="28"/></a>
+            <a href="index"><img src="../images/S4S_color.png" alt="Songs for Soldiers logo with link to Home page" width="325" /></a>
             <ul>
-                <li><a href="/about">Our Mission</a></li>
+                <li><a href="/index">Home</a></li>
                 <li><a href="/shop">Merchandise</a></li>
                 <li><a href="/events">Events</a></li>
                 <li><a href="/volunteer">Volunteer</a></li>
@@ -43,9 +45,10 @@
 
     <div id="footer" th:fragment="footer">
         <ul>
+            <li><a href="/about">Our Mission</a></li>
             <li><a href="/contact">Contact Us</a></li>•
             <li><a href="/vet_assist">Apply for Assistance</a></li>•
-            <li><a href="/contact">Volunteer</a></li>
+            <li><a href="/volunteer">Volunteer</a></li>
             <!--<li><a href="/S4S/contact">Contact Us</a></li>•
             <li><a href="/S4S/vet_assist">Apply for Assistance</a></li>•
             <li><a href="/S4S/contact">Volunteer</a></li>-->

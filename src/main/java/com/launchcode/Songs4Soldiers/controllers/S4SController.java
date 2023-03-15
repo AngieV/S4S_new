@@ -1,4 +1,4 @@
-package com.laiunchcode.Songs4Soldiers.controllers;
+package com.launchcode.Songs4Soldiers.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -93,6 +93,11 @@ public class S4SController {
     public String volunteer(Model model) {
         String title="Volunteer";
         model.addAttribute("title", title);
+        List<String> days=new ArrayList<>();
+        days.add("Friday Only");
+        days.add("Saturday Only");
+        days.add("Weekend Pass");
+        model.addAttribute("days", days);
         return "volunteer";
     }
 
@@ -103,43 +108,22 @@ public class S4SController {
         return "contact";
     }
 
-    @GetMapping("events")
-    public String events(Model model) {
-        String title="Events";
-        model.addAttribute("title", title);
-        List<String> events=new ArrayList<>();
-        events.add("Yoga4Soldiers");
-        events.add("Maupin Memorial Hero Workout");
-        events.add("Songs4Soldiers Yard Sale");
-        events.add("2023 S4S Golf Tournament");
-        model.addAttribute("events", events);
-        model.addAttribute("signup", "signup");
-        return "events";
+/*    moved to events controller   */
+
+/*    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "event")
+    public String eventQueryParam(@RequestParam String name, Model model) {
+        String thankYou = "Thank You, " + name + "!";
+        model.addAttribute("thankYou", thankYou);
+        return "registered";
     }
 
-    @GetMapping("events/yoga4soldiers")
-        public String yoga4soldiers(){
-        return "yoga4soldiers";
+    @GetMapping("registered/{eventName}")
+    @ResponseBody
+    //@PathVariable handler looks for requests to registered/{eventName}
+    //{eventName} as dynamic data becomes part of the path
+    public String event_PathParam(@PathVariable String eventName){
+        return "You have registered for " + eventName + "!";
     }
 
-    @GetMapping("events/golf")
-    public String golf(){
-        return "golf";
-    }
-
-    @GetMapping("events/yardsale")
-    public String yardsale(){
-        return "yardsale";
-    }
-
-    @GetMapping("events/workout")
-    public String workout(){
-        return "workout";
-    }
-
-    @GetMapping("signup")
-    public String signup(){
-        return "signup";
-    }
-
+ */
 }
