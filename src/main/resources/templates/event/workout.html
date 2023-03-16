@@ -3,13 +3,28 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <div>
-        <h1 th:text="2023 Hero Workout">Title</h1>
-        <form method='post' action='/workout'>
-            <input type='text' value='name'/>
-            <input type='text' value='email'/>
-            <input type='submit' value='Register'/>
+<body>
+    <div class="container">
+        <div id="header" th:replace="fragments :: header"></div>
+        <h1 th:text="${title}">2023 Hero Workout</h1>
+        <h4>April 8, 2023</h4>
+        <h4>10:00 AM-12noon</h4>
+        <h4>Bare Hands Crossfit</h4>
+        <h4>618 N Main Street, Columbia, IL</h4>
+        <p>The Maupin HERO Workout (WOD) is in remembrance of SSG Matt Maupin of Batavia, OH.
+            Matt was taken POW during the Iraq War in 2004. His remains were unfortunately
+            uncovered in 2008. The founder of Songs4Soldiers served with Matt and survived the attack.
+            Per Matt’s mom’s request, 100% of the proceeds of this event will go to Songs4Soldiers
+            aiding them in their mission of helping fellow combat veterans!</p>
+        <p>In-person ticket sales and registration begins at 9 am. Please come early to stretch.
+            The workout begins promptly at 10 am!</p>
+        <p>Open to the public and ALL fitness levels. Scaled versions of the workout available.
+            There will be plenty of outdoor and indoor space available so bring your friends!
+            Post workout beer!</p>
+        <form method='post' action='/register'>
+            <input type='text' name='name'/>
+            <input type='text' name='email'/>
+            <button type='submit' value='Register'></button>
         </form>
     </div>
 <div id="footer" th:replace="fragments :: footer"></div>

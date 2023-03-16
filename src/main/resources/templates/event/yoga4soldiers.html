@@ -3,13 +3,22 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <h1 th:text="${title}">Yoga4Soldiers 2023</h1>
-    <form method='post' action='/yoga4soldiers'>
-        <input type='text' value='name'/>
-        <input type='text' value='email'/>
-        <input type='submit' value='Register'/>
-    </form>
+<body>
+    <div id="header" th:replace="fragments :: header"></div>
+    <div class="container">
+        <h1 th:text="${title}">Yoga4Soldiers 2023</h1>
+            <h4>Saturday March 25, 2023</h4>
+            <h4>9:00 AM to 10:30 AM</h4>
+            <h4>Main Street Abbey</h4>
+            <h4>340 S. Main Street, Columbia, IL</h4>
+            <p>Join us at the beautiful Main Street Abbey for our annual yoga practice.<br>
+                Experience sound healing and a yoga practice for all levels.</p>
+            <form method='post' action='/register'>
+                <input type='text' name='name'/>
+                <input type='text' name='email'/>
+                <button type='submit' value='Register'></button>
+            </form>
     <div id="footer" th:replace="fragments :: footer"></div>
+    </div>
 </body>
 

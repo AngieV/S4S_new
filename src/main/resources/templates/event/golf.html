@@ -3,18 +3,28 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <div id="header" th:replace="fragments :: header"></div>
-
-    <div>
-        <h1>2023 S4S Golf Tournament</h1>
-        <form method='post' action='/golf'>
-            <input type='text' name='name'/>
-            <input type='text' name='email'/>
-            <input type='submit' value='Register'/>
-        </form>
-
+<body>
+    <div class="container">
+        <div id="header" th:replace="fragments :: header"></div>
+        <div class="block">
+            <h1 th:text="${title}">2023 S4S Golf Tournament</h1>
+                <div class="block">
+                    <h4>Friday May 19, 2023</h4>
+                    <h4>Registration and Lunch at 11:30 AM</h4>
+                    <h4>Shotgun start at 1 PM</h4>
+                    <h4>Acorns Golf Links</h4>
+                    <h4>3933 Ahne Rd, Waterloo, IL</h4>
+                </div>
+                <p>$450/Team of Four – Includes 18 holes, mulligans, skins, cart, 5 beer tickets, lunch, swag bag and refreshments.</p>
+                <p>Register to guarantee your participation in the tournament until all 36 team slots are filled.</p>
+                <h2>SOLD OUT!!!</h2>
+                <form method='post' action='/register'>
+                    <input type='text' name='name'/>
+                    <input type='text' name='email'/>
+                    <button type='submit' value='Register'></button>
+                </form>
+            </div>
+        <div id="footer" th:replace="fragments :: footer"></div>
     </div>
-    <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

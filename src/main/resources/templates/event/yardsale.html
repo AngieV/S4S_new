@@ -3,9 +3,17 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://www.thymeleaf.org/ ">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-    <h1 th:text="${title}">2023 S4S Yardsale</h1>
-
+<body>
+    <div id="header" th:replace="fragments :: header"></div>
+    <div class="container">
+        <h1 th:text="${title}">2023 S4S Yardsale</h1>
+        <h4>Friday April 21 & Saturday April 22, 2023</h4>
+        <h4>8:00 AM to 2:00 PM each day</h4>
+        <h4>705 N. Main Street, Columbia, IL</h4>
+        <p>Part of Columbia's City Wide Yard Sale</p>
+        <p>PCome by to see our huge inventory of new and like-new kitchen appliances, utensils, dishes, glassware, decor, linens, pillows, comforters, sheets, lamps and lights, furniture, vacuums, pictures, tools, misc appliances and more!</p>
+        <p>ALL sales and donations go directly to combat veterans and their families in need!</p>
+    </div>
     <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

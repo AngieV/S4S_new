@@ -108,22 +108,4 @@ public class S4SController {
         return "contact";
     }
 
-/*    moved to events controller   */
-
-/*    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "event")
-    public String eventQueryParam(@RequestParam String name, Model model) {
-        String thankYou = "Thank You, " + name + "!";
-        model.addAttribute("thankYou", thankYou);
-        return "registered";
-    }
-
-    @GetMapping("registered/{eventName}")
-    @ResponseBody
-    //@PathVariable handler looks for requests to registered/{eventName}
-    //{eventName} as dynamic data becomes part of the path
-    public String event_PathParam(@PathVariable String eventName){
-        return "You have registered for " + eventName + "!";
-    }
-
- */
 }

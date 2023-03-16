@@ -2,15 +2,16 @@ package com.launchcode.Songs4Soldiers.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class EventsController {
+
+    //make the list global
+    private static List<String> events=new ArrayList<>();
 
     @GetMapping("events")
     public String events(Model model) {
@@ -26,35 +27,48 @@ public class EventsController {
         return "events";
     }
 
-    @PostMapping
-    public String eventRegister(@RequestParam String name){
-        return "Thank you, " + name + "!";
-    }
+    /*@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "events")
+    public String eventsQueryParam(@RequestParam String name, Model model) {
+        String register = "Thank You for registering " + name + "!";
+        model.addAttribute("register", register);
+        return "events";
+    }*/
 
-    /*@PostMapping
+/*    //PATH PARAMS in DYNAMIC REQUESTS (COOL SHIT!)
+    // handles requests events
+    @GetMapping("events/{name}")
     @ResponseBody
-    public String eventRegister(@RequestParam String name){
-    return "event/";
-        return "Thank you, " + name + "!";
+    //@PathVariable handler looks for requests to events/{name}
+    //{name} as dynamic data becomes part of the path
+    public String helloWithPathParam(@PathVariable String name){
+        return "Thank You for registering " + name + "!";
     }*/
 
     @GetMapping("event/yoga4soldiers")
-    public String yoga4soldiers(){
+    public String yoga4soldiers(Model model){
+        String title="Yoga4Soldiers";
+        model.addAttribute("title", title);
         return "event/yoga4soldiers";
     }
 
     @GetMapping("event/golf")
-    public String golf(){
+    public String golf(Model model){
+        String title="S4S Annual Golf Tournament";
+        model.addAttribute("title", title);
         return "event/golf";
     }
 
     @GetMapping("event/yardsale")
-    public String yardsale(){
+    public String yardsale(Model model){
+        String title="S4S Yard Sale";
+        model.addAttribute("title", title);
         return "event/yardsale";
     }
 
     @GetMapping("event/workout")
-    public String workout(){
+    public String workout(Model model){
+        String title="Hero Workout";
+        model.addAttribute("title", title);
         return "event/workout";
     }
 
@@ -64,4 +78,18 @@ public class EventsController {
         model.addAttribute("title", title);
         return "signup";
     }
+
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "register")
+    public String eventRegisterQuery(@RequestParam String name, @RequestParam String email, Model model) {
+        String register = "Thank You for registering " + name + "! You will receive an e-mail at " + email + "shortly to confirm. ";
+        model.addAttribute("register", register);
+        return "signup";
+    }
+
+/*    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "signup")
+    public String signupQueryParam(@RequestParam String name, Model model) {
+        String register = "Thank You for registering " + name + "!";
+        model.addAttribute("register", register);
+        return "register";
+    }*/
 }
